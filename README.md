@@ -1,4 +1,4 @@
-# BDMM | Assignment 1 & 2 | 24.25 - [Group XX]
+# BDMM | Assignment 1 & 2 | 24.25 - [Group 5]
 
 **Assignment 1** & **Assignment 2** of the Big Data Management and Modelling course of the Master's in Data Science and Advanced Analytics at NOVA IMS.
 
@@ -10,7 +10,7 @@
 
 <br>
 
-#### **Group XX**
+#### **Group 5**
 
   - Alexandre Gonçalves, 20240738
   - André Silvestre, 20240502
