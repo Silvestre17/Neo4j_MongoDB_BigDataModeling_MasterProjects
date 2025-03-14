@@ -6,8 +6,6 @@
 
 > [**👨‍💻 GitHub Repository**](https://github.com/Silvestre17/BDMM_Assignment1-2)
 
-> [**📰 Report - Word | > Assignment 1**](https://liveeduisegiunl-my.sharepoint.com/:w:/g/personal/20240502_novaims_unl_pt/ETqOSilJdCVPoAFttGbK81EBWVztzEGySHjGuGf89_yE7w?e=4Chw6p)
-
 <br>
 
 #### **Group 5**
@@ -20,7 +18,29 @@
   
 <br>
 
-## **Questions**
+---
+
+## **🍺 The Beer project  🍺** 
+
+As it was shown in classes, graph databases are a natural way of navegating related information. For this first project we will be taking a graph database to analyse beer and breweries!   
+
+The project datasets are based on [kaggle](https://www.kaggle.com/ehallmar/beers-breweries-and-beer-reviews), released by Evan Hallmark. 
+
+### **📰 Problem description**
+
+Imagine you are working in the Data Management department of Analytics company.
+Explore the database via python neo4j connector and/or the graphical tool in the NEO4J webpage. Answer the questions while adjusting the database to meet the needs of your colleagues.
+Please record and keep track of your database changes, and submit the file with all cells run and with the output shown.
+
+<br>
+
+## **🧮 Database Schema**
+
+<center><img src="./img/graph_afterCleaning.svg" width="1000"></center>
+
+<br>
+
+## **🔢 Questions**
 
 1. Explore the database: get familiar with current schema, elements and other important database parameters. [1 point]
 2. Adjust the database and mention reasoning behind: e.g. clean errors, remove redundancies, adjust schema as necessary. Visualize the final version of database schema. [4 points]
@@ -38,3 +58,4 @@
     2. Which beer is the most popular when considering the number of users who reviewed it? 
     3. Users are connected together by their reviews of beers, taking into consideration the "smell" score they assign as a weight, how many communities are formed from these relationships? How many users are in the three largest communities? 
     4. Which user is the most influential when it comes to reviews of distinct beers by style?
+
