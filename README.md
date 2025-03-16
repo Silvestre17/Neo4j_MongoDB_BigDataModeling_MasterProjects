@@ -20,7 +20,17 @@
 
 ---
 
-## **🍺 The Beer project  🍺** 
+<details>
+  
+  <summary>
+
+  # **1️⃣ Assignment 1**
+
+  </summary>
+
+## **🍺 The Beer project  🍺** <img src="https://retina.ai/app/uploads/2020/05/neo4j.png" width="50" style="margin-left: 10px;">
+
+
 
 As it was shown in classes, graph databases are a natural way of navegating related information. For this first project we will be taking a graph database to analyse beer and breweries!   
 
@@ -36,7 +46,7 @@ Please record and keep track of your database changes, and submit the file with 
 
 ## **🧮 Database Schema**
 
-<center><img src="./img/graph_afterCleaning.svg" width="1000"></center>
+<center><img src="./img/graph_afterCleaningEdited.svg" width="1000"></center>
 
 <br>
 
@@ -56,6 +66,23 @@ Please record and keep track of your database changes, and submit the file with 
 5. Answer **two out of four** of the following questions using Graph Algorithms (gds): [NB: make sure to clear the graph before using it again] For the quarterly report, Analytics department the following information. [6 points]
     1. Which two countries are most similar when it comes to their top five most produced Beer styles?
     2. Which beer is the most popular when considering the number of users who reviewed it? 
-    3. Users are connected together by their reviews of beers, taking into consideration the "smell" score they assign as a weight, how many communities are formed from these relationships? How many users are in the three largest communities? 
-    4. Which user is the most influential when it comes to reviews of distinct beers by style?
+    3. ~~Users are connected together by their reviews of beers, taking into consideration the "smell" score they assign as a weight, how many communities are formed from these relationships? How many users are in the three largest communities?~~
+    4. ~~Which user is the most influential when it comes to reviews of distinct beers by style?~~
 
+</details>
+
+
+<details>
+  
+  <summary>
+
+  # **2️⃣ Assignment 2**
+
+  </summary>
+
+## **MongoDB** <img src="https://www.svgrepo.com/show/331488/mongodb.svg" width="20">
+
+...
+
+
+</details>
