@@ -1,7 +1,5 @@
-_/
-data/
-BDMM_Assignment1.docx
-Group5_BDMM_HW1.html
+Homework1_Neo4J_TheBeerProject/_/
+./data/
 
 
 # Created by .ignore support plugin (hsz.mobi)
@@ -21,3 +19,4 @@ ENV/
 
 # idea folder, uncomment if you don't need it
 .idea/
+Homework1_Neo4J_TheBeerProject/_/Container.txt
