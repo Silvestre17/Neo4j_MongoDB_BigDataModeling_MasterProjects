@@ -46,7 +46,7 @@ Please record and keep track of your database changes, and submit the file with 
 
 ## **🧮 Database Schema**
 
-<center><img src="./img/graph_afterCleaningEdited.svg" width="1000"></center>
+<center><img src="./Homework1_Neo4J_TheBeerProject/img/graph_afterCleaningEdited.svg" width="1000"></center>
 
 <br>
 
