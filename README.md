@@ -85,7 +85,7 @@ Please record and keep track of your database changes, and submit the file with 
 ## **🔢 Questions**
 
 
-<font size="6">1. Data Modelling</font>
+<font size="8">1. Data Modelling</font>
 
 <font size="4">Congratulations! You’ve been hired as part of the new Data Engineering and Management team in the AirBNB Business Intelligence department. The company is restructuring due to unsatisfactory performance from the previous teams.
 
