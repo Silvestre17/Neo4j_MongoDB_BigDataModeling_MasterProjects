@@ -20,3 +20,5 @@ ENV/
 # idea folder, uncomment if you don't need it
 .idea/
 Homework1_Neo4J_TheBeerProject/_/Container.txt
+Homework2_MongoDB/data/
+Homework2_MongoDB/Group5_BDMM_HW2.html
