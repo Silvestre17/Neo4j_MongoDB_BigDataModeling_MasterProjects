@@ -1,0 +1,152 @@
+db.createCollection("Hosts", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "Hosts",
+      required: [],
+      properties: {
+        "_id": { bsonType: "string" },
+        "Name": { bsonType: "string" },
+        "IsSuperhost": { bsonType: "bool" },
+        "ResponseRate": { bsonType: "int" },
+        "TotalListingsCount": { bsonType: "int" },
+        "Verifications": { bsonType: "array", items: { bsonType: "string" } },
+      },
+    },
+  },
+});
+
+db.createCollection("Reviews", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "Reviews",
+      required: [],
+      properties: {
+        "_id": { bsonType: "string" },
+        "ListingId": { bsonType: "string" },
+        "ReviewerId": { bsonType: "string" },
+        "ReviewerName": { bsonType: "string" },
+        "Comments": { bsonType: "string" },
+        "Date": { bsonType: "date" },
+      },
+    },
+  },
+});
+
+db.createCollection("Transactions", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "Transactions",
+      required: [],
+      properties: {
+        "_id": { bsonType: "objectId" },
+        "ListingId": { bsonType: "string" },
+        "Date": { bsonType: "date" },
+        "Price": { bsonType: "decimal" },
+      },
+    },
+  },
+});
+
+db.createCollection("AllFields", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "AllFields",
+      required: [],
+      properties: {
+        "_id": { bsonType: "objectId" },
+        "access": { bsonType: "string" },
+        "accommodates": { bsonType: "int" },
+        "address": { bsonType: "object", title: "address", properties: { "country": { bsonType: "string" }, "country_code": { bsonType: "string" }, "government_area": { bsonType: "string" }, "location": { bsonType: "object", title: "location", properties: { "coordinates": { bsonType: "array", items: { bsonType: "double" } }, "is_location_exact": { bsonType: "bool" }, "type": { bsonType: "string" }, }, }, "market": { bsonType: "string" }, "street": { bsonType: "string" }, "suburb": { bsonType: "string" }, }, },
+        "amenities": { bsonType: "array", items: { bsonType: "string" } },
+        "availability": { bsonType: "object", title: "availability", properties: { "availability_30": { bsonType: "int" }, "availability_365": { bsonType: "int" }, "availability_60": { bsonType: "int" }, "availability_90": { bsonType: "int" }, }, },
+        "bathrooms": { bsonType: "decimal" },
+        "bed_type": { bsonType: "string" },
+        "bedrooms": { bsonType: "int" },
+        "beds": { bsonType: "int" },
+        "calendar_last_scraped": { bsonType: "date" },
+        "cancellation_policy": { bsonType: "string" },
+        "cleaning_fee": { bsonType: "decimal" },
+        "description": { bsonType: "string" },
+        "extra_people": { bsonType: "decimal" },
+        "first_review": { bsonType: "date" },
+        "guests_included": { bsonType: "decimal" },
+        "host_about": { bsonType: "string" },
+        "host_has_profile_pic": { bsonType: "bool" },
+        "host_id": { bsonType: "string" },
+        "host_identity_verified": { bsonType: "bool" },
+        "host_is_superhost": { bsonType: "bool" },
+        "host_listings_count": { bsonType: "int" },
+        "host_location": { bsonType: "string" },
+        "host_name": { bsonType: "string" },
+        "host_neighbourhood": { bsonType: "string" },
+        "host_picture_url": { bsonType: "string" },
+        "host_response_rate": { bsonType: "int" },
+        "host_response_time": { bsonType: "string" },
+        "host_thumbnail_url": { bsonType: "string" },
+        "host_total_listings_count": { bsonType: "int" },
+        "host_url": { bsonType: "string" },
+        "host_verifications": { bsonType: "array", items: { bsonType: "string" } },
+        "house_rules": { bsonType: "string" },
+        "images": { bsonType: "object", title: "images", properties: { "medium_url": { bsonType: "string" }, "picture_url": { bsonType: "string" }, "thumbnail_url": { bsonType: "string" }, "xl_picture_url": { bsonType: "string" }, }, },
+        "interaction": { bsonType: "string" },
+        "last_review": { bsonType: "date" },
+        "last_scraped": { bsonType: "date" },
+        "listing_url": { bsonType: "string" },
+        "maximum_nights": { bsonType: "int" },
+        "minimum_nights": { bsonType: "int" },
+        "monthly_price": { bsonType: "decimal" },
+        "name": { bsonType: "string" },
+        "neighborhood_overview": { bsonType: "string" },
+        "notes": { bsonType: "string" },
+        "number_of_reviews": { bsonType: "int" },
+        "price": { bsonType: "decimal" },
+        "property_type": { bsonType: "string" },
+        "review_scores_checkin": { bsonType: "int" },
+        "review_scores_cleanliness": { bsonType: "int" },
+        "review_scores_communication": { bsonType: "int" },
+        "review_scores_location": { bsonType: "int" },
+        "review_scores_rating": { bsonType: "int" },
+        "review_scores_value": { bsonType: "int" },
+        "reviews": { bsonType: "array", items: { bsonType: "object" } },
+        "reviews_per_month": { bsonType: "decimal" },
+        "room_type": { bsonType: "string" },
+        "security_deposit": { bsonType: "decimal" },
+        "space": { bsonType: "string" },
+        "summary": { bsonType: "string" },
+        "transactions": { bsonType: "object", title: "transactions", properties: { "bucket_end_date": { bsonType: "date" }, "bucket_start_date": { bsonType: "date" }, "transaction_count": { bsonType: "int" }, "transactions": { bsonType: "array", items: { bsonType: "object" } }, }, },
+        "transit": { bsonType: "string" },
+        "weekly_price": { bsonType: "decimal" },
+      },
+    },
+  },
+});
+
+db.createCollection("Listings", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "Listings",
+      required: [],
+      properties: {
+        "_id": { bsonType: "objectId" },
+        "Name": { bsonType: "string" },
+        "Price": { bsonType: "decimal" },
+        "Address": { bsonType: "object", title: "Address", properties: { "country": { bsonType: "string" }, "country_code": { bsonType: "string" }, "government_area": { bsonType: "string" }, "location": { bsonType: "object", title: "location", properties: { "coordinates": { bsonType: "array", items: { bsonType: "double" } }, "is_location_exact": { bsonType: "bool" }, "type": { bsonType: "string" }, }, }, "market": { bsonType: "string" }, "street": { bsonType: "string" }, "suburb": { bsonType: "string" }, }, },
+        "Amenities": { bsonType: "array", items: { bsonType: "string" } },
+        "Accommodates": { bsonType: "int" },
+        "PropertyType": { bsonType: "string" },
+        "BedType": { bsonType: "string" },
+        "HostId": { bsonType: "string" },
+        "RecentReviews": { bsonType: "array", items: { bsonType: "object" } },
+        "ReviewScores": { bsonType: "object", title: "ReviewScores", properties: { "Checkin": { bsonType: "int" }, "Cleanliness": { bsonType: "int" }, "Communication": { bsonType: "int" }, "Location": { bsonType: "int" }, "Rating": { bsonType: "int" }, "Value": { bsonType: "int" }, }, },
+        "NumberOfReviews": { bsonType: "int" },
+        "Availability": { bsonType: "object", title: "Availability", properties: { "availability_30": { bsonType: "int" }, "availability_365": { bsonType: "int" }, "availability_60": { bsonType: "int" }, "availability_90": { bsonType: "int" }, }, },
+        "MaximumNights": { bsonType: "int" },
+      },
+    },
+  },
+});
