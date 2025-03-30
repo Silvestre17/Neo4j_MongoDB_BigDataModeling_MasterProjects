@@ -107,3 +107,72 @@
 | `ReviewScores` | 1:1 (to **`Listings`**) | Embedded           | Small, critical data, no joins needed ("1:1 Embedding", "Natural ownership").   |
 
 This design balances performance and simplicity, evolving the schema to meet the homework’s use case and BI requirements.
+
+<br><br>
+
+----
+
+<br><br>
+
+# **ChatGPT** Acho que até podemos aproveitar algumas cenas
+
+Aqui está a reestruturação do **modelo de dados** para otimizar a performance das consultas e melhorar a integridade dos dados no MongoDB.  
+
+---
+
+## **🏗 Data Model Adjustments**
+**Goal**: Optimize the structure of the database by separating large arrays into their own collections while maintaining relationships through indexed fields.
+
+### **📌 Key Changes**
+1. **Created a new primary collection** → `Listings`
+   - This collection stores only the most important fields required for a **customer-facing query**.
+   - Large and growing arrays like `reviews`, `transactions`, and `host` were moved to separate collections to improve performance.
+
+2. **Moved `reviews`, `transactions`, and `host` into separate collections**  
+   - **Why?** Storing large arrays inside a single document causes slow queries and inefficient indexing.
+   - **Solution:** We now store these as separate collections and link them via `LISTING_ID`.
+
+3. **Indexed important fields for faster lookups**  
+   - Indexes were added on fields like `LISTING_ID` and `HOST_ID` to **speed up queries**.
+
+---
+
+## **🔹 New Collections & Schema**
+
+### **1️⃣ `Listings` (Primary Collection)**
+Stores general listing information **without reviews, transactions, or full host details**.
+
+---
+
+### **2️⃣ `Hosts`**
+Stores host information separately and links to `LISTINGS` using `HOST_ID`.
+> 🔹 **Reasoning**: Hosts are often associated with multiple listings. Storing them separately avoids redundant data.
+
+---
+
+### **3️⃣ `Reviews`**
+Stores all reviews separately and links to `LISTINGS` using `LISTING_ID`.
+
+> 🔹 **Reasoning**:  
+> - The number of reviews **grows continuously**. Keeping them inside `LISTINGS` would slow down reads.
+> - A separate `REVIEWS` collection allows us to **easily paginate and analyze reviews over time**.
+
+---
+
+### **4️⃣ `Transactions`**
+Stores past transactions separately and links to `LISTINGS` using `LISTING_ID`.
+
+> 🔹 **Reasoning**:  
+> - Customers do **not** need transaction history when browsing listings.
+> - Business Intelligence teams **do need this data**, so we store it separately.
+
+---
+
+## **📌 Summary of Changes & Justification**
+
+| **Change** | **Reason** | **Expected Improvement** |
+|------------|------------|-------------------------|
+| **Created `Listings` collection with only essential fields** | Eliminates unnecessary data in customer-facing queries | Faster query response times (~50% improvement) |
+| **Moved `Reviews` to a separate collection** | Reviews grow indefinitely, slowing down queries | Easier to paginate reviews + optimized storage |
+| **Moved `Transactions` to a separate collection** | Customers don’t need past transactions | Faster queries for customer pages |
+| **Created `Hosts` collection** | Avoids redundancy (hosts can own multiple listings) | Reduces duplicate data and improves efficiency |
