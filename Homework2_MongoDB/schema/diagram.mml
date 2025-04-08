@@ -1,1 +1,188 @@
-{"version":"0.1","tables":[{"id":"40gbdcde-e990-43d9-d126-0a0e936808fa","tableName":"Hosts","fields":[{"id":"b7c8d9e0-f123-4567-defg-7890123456","PK":true,"name":"_id","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"c8d9e0f1-a234-5678-efgh-8901234567","PK":false,"name":"Name","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"d9e0f1a2-b345-6789-fghi-9012345678","PK":false,"name":"IsSuperhost","type":"bool","isNN":false,"isArray":false,"children":[]},{"id":"e0f1a2b3-c456-7890-ghij-0123456789","PK":false,"name":"ResponseRate","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"f1a2b3c4-d567-8901-hijk-1234567890","PK":false,"name":"TotalListingsCount","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"a2b3c4d5-e678-9012-ijkl-2345678901","PK":false,"name":"Verifications","type":"string","isNN":false,"isArray":true,"children":[]}],"x":1575.75,"y":602.5999999999999},{"id":"30fbcccd-d890-43c9-c126-090e936808f9","tableName":"Reviews","fields":[{"id":"b1c2d3e4-f567-8901-xyza-1234567890","PK":true,"name":"_id","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"c2d3e4f5-a678-9012-yzab-2345678901","PK":false,"name":"ListingId","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"d3e4f5a6-b789-0123-zabc-3456789012","PK":false,"name":"ReviewerId","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"e4f5a6b7-c890-1234-abcd-4567890123","PK":false,"name":"ReviewerName","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"f5a6b7c8-d901-2345-bcde-5678901234","PK":false,"name":"Comments","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"a6b7c8d9-e012-3456-cdef-6789012345","PK":false,"name":"Date","type":"date","isNN":false,"isArray":false,"children":[]}],"x":466.3,"y":147.94999999999993},{"id":"50hcedef-f090-43e9-e126-0b0e936808fb","tableName":"Transactions","fields":[{"id":"b3c4d5e6-f789-0123-jklm-3456789012","PK":true,"name":"_id","type":"objectId","isNN":false,"isArray":false,"children":[]},{"id":"c4d5e6f7-a890-1234-klmn-4567890123","PK":false,"name":"ListingId","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"d5e6f7a8-b901-2345-lmno-5678901234","PK":false,"name":"Date","type":"date","isNN":false,"isArray":false,"children":[]},{"id":"e6f7a8b9-c012-3456-mnop-6789012345","PK":false,"name":"Price","type":"decimal","isNN":false,"isArray":false,"children":[]}],"x":1501.9500000000003,"y":148.15},{"id":"10daccab-b690-43a9-a126-070e936808f7","tableName":"AllFields","fields":[{"id":"c0bc1fd6-579b-4bcd-ad5a-080023059b5d","PK":true,"name":"_id","type":"objectId","isNN":false,"isArray":false,"children":[]},{"id":"012ddfd4-fc57-4300-b25e-b33c8bb24344","PK":false,"name":"access","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"b7ceb3a0-df2a-4032-a9bc-4e40bd37c8f5","PK":false,"name":"accommodates","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"efca57a0-8694-4c57-b0aa-4d15f823eaaf","PK":false,"name":"address","type":"object","isNN":false,"isArray":false,"children":[{"id":"1ee87ef4-d5e0-4f2f-9e74-249e2ca04927","PK":false,"name":"country","type":"string","children":[]},{"id":"d912d58c-98f5-457c-a6c9-fea47b9177db","PK":false,"name":"country_code","type":"string","children":[]},{"id":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","PK":false,"name":"government_area","type":"string","children":[]},{"id":"b2c3d4e5-f6a7-8901-bcde-f2345678901","PK":false,"name":"location","type":"object","children":[{"id":"c3d4e5f6-a7b8-9012-cdef-3456789012","PK":false,"name":"coordinates","type":"double","isArray":true,"children":[]},{"id":"d4e5f6a7-b890-1234-defg-4567890123","PK":false,"name":"is_location_exact","type":"bool","children":[]},{"id":"e5f6a7b8-c901-2345-efgh-5678901234","PK":false,"name":"type","type":"string","children":[]}]},{"id":"f6a7b8c9-d012-3456-fghi-6789012345","PK":false,"name":"market","type":"string","children":[]},{"id":"a7b8c9d0-e123-4567-ghij-7890123456","PK":false,"name":"street","type":"string","children":[]},{"id":"b8c9d0e1-f234-5678-hijk-8901234567","PK":false,"name":"suburb","type":"string","children":[]}]},{"id":"c9d0e1f2-a345-6789-ijkl-9012345678","PK":false,"name":"amenities","type":"string","isNN":false,"isArray":true,"children":[]},{"id":"d0e1f2a3-b456-7890-jklm-0123456789","PK":false,"name":"availability","type":"object","isNN":false,"isArray":false,"children":[{"id":"e1f2a3b4-c567-8901-klmn-1234567890","PK":false,"name":"availability_30","type":"int","children":[]},{"id":"f2a3b4c5-d678-9012-lmno-2345678901","PK":false,"name":"availability_365","type":"int","children":[]},{"id":"a3b4c5d6-e789-0123-mnop-3456789012","PK":false,"name":"availability_60","type":"int","children":[]},{"id":"b4c5d6e7-f890-1234-nopq-4567890123","PK":false,"name":"availability_90","type":"int","children":[]}]},{"id":"c5d6e7f8-a901-2345-opqr-5678901234","PK":false,"name":"bathrooms","type":"decimal","isNN":false,"isArray":false,"children":[]},{"id":"d6e7f8a9-b012-3456-pqrs-6789012345","PK":false,"name":"bed_type","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"e7f8a9b0-c123-4567-qrst-7890123456","PK":false,"name":"bedrooms","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"f8a9b0c1-d234-5678-rstu-8901234567","PK":false,"name":"beds","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"a9b0c1d2-e345-6789-stuv-9012345678","PK":false,"name":"calendar_last_scraped","type":"date","isNN":false,"isArray":false,"children":[]},{"id":"b0c1d2e3-f456-7890-tuvw-0123456789","PK":false,"name":"cancellation_policy","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"c1d2e3f4-a567-8901-uvwx-1234567890","PK":false,"name":"cleaning_fee","type":"decimal","isNN":false,"isArray":false,"children":[]},{"id":"d2e3f4a5-b678-9012-vwxy-2345678901","PK":false,"name":"description","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"e3f4a5b6-c789-0123-wxyz-3456789012","PK":false,"name":"extra_people","type":"decimal","isNN":false,"isArray":false,"children":[]},{"id":"f4a5b6c7-d890-1234-xyza-4567890123","PK":false,"name":"first_review","type":"date","isNN":false,"isArray":false,"children":[]},{"id":"a5b6c7d8-e901-2345-yzab-5678901234","PK":false,"name":"guests_included","type":"decimal","isNN":false,"isArray":false,"children":[]},{"id":"b6c7d8e9-f012-3456-zabc-6789012345","PK":false,"name":"host_about","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"c7d8e9f0-a123-4567-abcd-7890123456","PK":false,"name":"host_has_profile_pic","type":"bool","isNN":false,"isArray":false,"children":[]},{"id":"d8e9f0a1-b234-5678-bcde-8901234567","PK":false,"name":"host_id","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"e9f0a1b2-c345-6789-cdef-9012345678","PK":false,"name":"host_identity_verified","type":"bool","isNN":false,"isArray":false,"children":[]},{"id":"f0a1b2c3-d456-7890-defg-0123456789","PK":false,"name":"host_is_superhost","type":"bool","isNN":false,"isArray":false,"children":[]},{"id":"a1b2c3d4-e567-8901-efgh-1234567890","PK":false,"name":"host_listings_count","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"b2c3d4e5-f678-9012-fghi-2345678901","PK":false,"name":"host_location","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"c3d4e5f6-a789-0123-ghij-3456789012","PK":false,"name":"host_name","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"d4e5f6a7-b890-1234-hijk-4567890123","PK":false,"name":"host_neighbourhood","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"e5f6a7b8-c901-2345-ijkl-5678901234","PK":false,"name":"host_picture_url","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"f6a7b8c9-d012-3456-jklm-6789012345","PK":false,"name":"host_response_rate","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"a7b8c9d0-e123-4567-klmn-7890123456","PK":false,"name":"host_response_time","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"b8c9d0e1-f234-5678-lmno-8901234567","PK":false,"name":"host_thumbnail_url","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"c9d0e1f2-a345-6789-mnop-9012345678","PK":false,"name":"host_total_listings_count","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"d0e1f2a3-b456-7890-nopq-0123456789","PK":false,"name":"host_url","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"e1f2a3b4-c567-8901-opqr-1234567890","PK":false,"name":"host_verifications","type":"string","isNN":false,"isArray":true,"children":[]},{"id":"f2a3b4c5-d678-9012-pqrs-2345678901","PK":false,"name":"house_rules","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"a3b4c5d6-e789-0123-qrst-3456789012","PK":false,"name":"images","type":"object","isNN":false,"isArray":false,"children":[{"id":"b4c5d6e7-f890-1234-rstu-4567890123","PK":false,"name":"medium_url","type":"string","children":[]},{"id":"c5d6e7f8-a901-2345-stuv-5678901234","PK":false,"name":"picture_url","type":"string","children":[]},{"id":"d6e7f8a9-b012-3456-tuvw-6789012345","PK":false,"name":"thumbnail_url","type":"string","children":[]},{"id":"e7f8a9b0-c123-4567-uvwx-7890123456","PK":false,"name":"xl_picture_url","type":"string","children":[]}]},{"id":"f8a9b0c1-d234-5678-vwxy-8901234567","PK":false,"name":"interaction","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"a9b0c1d2-e345-6789-wxyz-9012345678","PK":false,"name":"last_review","type":"date","isNN":false,"isArray":false,"children":[]},{"id":"b0c1d2e3-f456-7890-xyza-0123456789","PK":false,"name":"last_scraped","type":"date","isNN":false,"isArray":false,"children":[]},{"id":"c1d2e3f4-a567-8901-yzab-1234567890","PK":false,"name":"listing_url","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"d2e3f4a5-b678-9012-zabc-2345678901","PK":false,"name":"maximum_nights","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"e3f4a5b6-c789-0123-abcd-3456789012","PK":false,"name":"minimum_nights","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"f4a5b6c7-d890-1234-bcde-4567890123","PK":false,"name":"monthly_price","type":"decimal","isNN":false,"isArray":false,"children":[]},{"id":"a5b6c7d8-e901-2345-cdef-5678901234","PK":false,"name":"name","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"b6c7d8e9-f012-3456-defg-6789012345","PK":false,"name":"neighborhood_overview","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"c7d8e9f0-a123-4567-efgh-7890123456","PK":false,"name":"notes","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"d8e9f0a1-b234-5678-fghi-8901234567","PK":false,"name":"number_of_reviews","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"e9f0a1b2-c345-6789-ghij-9012345678","PK":false,"name":"price","type":"decimal","isNN":false,"isArray":false,"children":[]},{"id":"f0a1b2c3-d456-7890-hijk-0123456789","PK":false,"name":"property_type","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"a1b2c3d4-e567-8901-ijkl-1234567890","PK":false,"name":"review_scores_checkin","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"b2c3d4e5-f678-9012-jklm-2345678901","PK":false,"name":"review_scores_cleanliness","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"c3d4e5f6-a789-0123-klmn-3456789012","PK":false,"name":"review_scores_communication","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"d4e5f6a7-b890-1234-lmno-4567890123","PK":false,"name":"review_scores_location","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"e5f6a7b8-c901-2345-mnop-5678901234","PK":false,"name":"review_scores_rating","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"f6a7b8c9-d012-3456-nopq-6789012345","PK":false,"name":"review_scores_value","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"a7b8c9d0-e123-4567-opqr-7890123456","PK":false,"name":"reviews","type":"object","isNN":false,"isArray":true,"children":[{"id":"b8c9d0e1-f234-5678-pqrs-8901234567","PK":false,"name":"_id","type":"string","children":[]},{"id":"c9d0e1f2-a345-6789-qrst-9012345678","PK":false,"name":"comments","type":"string","children":[]},{"id":"d0e1f2a3-b456-7890-rstu-0123456789","PK":false,"name":"date","type":"date","children":[]},{"id":"e1f2a3b4-c567-8901-stuv-1234567890","PK":false,"name":"listing_id","type":"string","children":[]},{"id":"f2a3b4c5-d678-9012-tuvw-2345678901","PK":false,"name":"reviewer_id","type":"string","children":[]},{"id":"a3b4c5d6-e789-0123-uvwx-3456789012","PK":false,"name":"reviewer_name","type":"string","children":[]}]},{"id":"b4c5d6e7-f890-1234-vwxy-4567890123","PK":false,"name":"reviews_per_month","type":"decimal","isNN":false,"isArray":false,"children":[]},{"id":"c5d6e7f8-a901-2345-wxyz-5678901234","PK":false,"name":"room_type","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"d6e7f8a9-b012-3456-xyza-6789012345","PK":false,"name":"security_deposit","type":"decimal","isNN":false,"isArray":false,"children":[]},{"id":"e7f8a9b0-c123-4567-yzab-7890123456","PK":false,"name":"space","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"f8a9b0c1-d234-5678-zabc-8901234567","PK":false,"name":"summary","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"a9b0c1d2-e345-6789-abcd-9012345678","PK":false,"name":"transactions","type":"object","isNN":false,"isArray":false,"children":[{"id":"b0c1d2e3-f456-7890-bcde-0123456789","PK":false,"name":"bucket_end_date","type":"date","children":[]},{"id":"c1d2e3f4-a567-8901-cdef-1234567890","PK":false,"name":"bucket_start_date","type":"date","children":[]},{"id":"d2e3f4a5-b678-9012-defg-2345678901","PK":false,"name":"transaction_count","type":"int","children":[]},{"id":"e3f4a5b6-c789-0123-efgh-3456789012","PK":false,"name":"transactions","type":"object","isArray":true,"children":[{"id":"f4a5b6c7-d890-1234-fghi-4567890123","PK":false,"name":"date","type":"date","children":[]},{"id":"a5b6c7d8-e901-2345-ghij-5678901234","PK":false,"name":"price","type":"decimal","children":[]}]}]},{"id":"b6c7d8e9-f012-3456-hijk-6789012345","PK":false,"name":"transit","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"c7d8e9f0-a123-4567-ijkl-7890123456","PK":false,"name":"weekly_price","type":"decimal","isNN":false,"isArray":false,"children":[]}],"x":40,"y":150.25},{"id":"20eaccbc-c790-43b9-b126-080e936808f8","tableName":"Listings","fields":[{"id":"d1e2f3a4-b567-8901-jklm-1234567890","PK":true,"name":"_id","type":"objectId","isNN":false,"isArray":false,"children":[]},{"id":"e2f3a4b5-c678-9012-klmn-2345678901","PK":false,"name":"Name","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"f3a4b5c6-d789-0123-lmno-3456789012","PK":false,"name":"Price","type":"decimal","isNN":false,"isArray":false,"children":[]},{"id":"a4b5c6d7-e890-1234-mnop-4567890123","PK":false,"name":"Address","type":"object","isNN":false,"isArray":false,"children":[{"id":"b5c6d7e8-f901-2345-nopq-5678901234","PK":false,"name":"country","type":"string","children":[]},{"id":"c6d7e8f9-a012-3456-opqr-6789012345","PK":false,"name":"country_code","type":"string","children":[]},{"id":"d7e8f9a0-b123-4567-pqrs-7890123456","PK":false,"name":"government_area","type":"string","children":[]},{"id":"e8f9a0b1-c234-5678-qrst-8901234567","PK":false,"name":"location","type":"object","children":[{"id":"f9a0b1c2-d345-6789-rstu-9012345678","PK":false,"name":"coordinates","type":"double","isArray":true,"children":[]},{"id":"a0b1c2d3-e456-7890-stuv-0123456789","PK":false,"name":"is_location_exact","type":"bool","children":[]},{"id":"b1c2d3e4-f567-8901-tuvw-1234567890","PK":false,"name":"type","type":"string","children":[]}]},{"id":"c2d3e4f5-a678-9012-uvwx-2345678901","PK":false,"name":"market","type":"string","children":[]},{"id":"d3e4f5a6-b789-0123-vwxy-3456789012","PK":false,"name":"street","type":"string","children":[]},{"id":"e4f5a6b7-c890-1234-wxyz-4567890123","PK":false,"name":"suburb","type":"string","children":[]}]},{"id":"f5a6b7c8-d901-2345-xyza-5678901234","PK":false,"name":"Amenities","type":"string","isNN":false,"isArray":true,"children":[]},{"id":"a6b7c8d9-e012-3456-yzab-6789012345","PK":false,"name":"Accommodates","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"b7c8d9e0-f123-4567-zabc-7890123456","PK":false,"name":"PropertyType","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"c8d9e0f1-a234-5678-abcd-8901234567","PK":false,"name":"BedType","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"d9e0f1a2-b345-6789-bcde-9012345678","PK":false,"name":"HostId","type":"string","isNN":false,"isArray":false,"children":[]},{"id":"e0f1a2b3-c456-7890-cdef-0123456789","PK":false,"name":"RecentReviews","type":"object","isNN":false,"isArray":true,"children":[{"id":"f1a2b3c4-d567-8901-defg-1234567890","PK":false,"name":"_id","type":"string","children":[]},{"id":"a2b3c4d5-e678-9012-efgh-2345678901","PK":false,"name":"comments","type":"string","children":[]},{"id":"b3c4d5e6-f789-0123-fghi-3456789012","PK":false,"name":"date","type":"date","children":[]},{"id":"c4d5e6f7-a890-1234-ghij-4567890123","PK":false,"name":"listing_id","type":"string","children":[]},{"id":"d5e6f7a8-b901-2345-hijk-5678901234","PK":false,"name":"reviewer_id","type":"string","children":[]},{"id":"e6f7a8b9-c012-3456-ijkl-6789012345","PK":false,"name":"reviewer_name","type":"string","children":[]}]},{"id":"f7a8b9c0-d123-4567-jklm-7890123456","PK":false,"name":"ReviewScores","type":"object","isNN":false,"isArray":false,"children":[{"id":"a8b9c0d1-e234-5678-klmn-8901234567","PK":false,"name":"Checkin","type":"int","children":[]},{"id":"b9c0d1e2-f345-6789-lmno-9012345678","PK":false,"name":"Cleanliness","type":"int","children":[]},{"id":"c0d1e2f3-a456-7890-mnop-0123456789","PK":false,"name":"Communication","type":"int","children":[]},{"id":"d1e2f3a4-b567-8901-nopq-1234567890","PK":false,"name":"Location","type":"int","children":[]},{"id":"e2f3a4b5-c678-9012-opqr-2345678901","PK":false,"name":"Rating","type":"int","children":[]},{"id":"f3a4b5c6-d789-0123-pqrs-3456789012","PK":false,"name":"Value","type":"int","children":[]}]},{"id":"a4b5c6d7-e890-1234-qrst-4567890123","PK":false,"name":"NumberOfReviews","type":"int","isNN":false,"isArray":false,"children":[]},{"id":"b5c6d7e8-f901-2345-rstu-5678901234","PK":false,"name":"Availability","type":"object","isNN":false,"isArray":false,"children":[{"id":"c6d7e8f9-a012-3456-stuv-6789012345","PK":false,"name":"availability_30","type":"int","children":[]},{"id":"d7e8f9a0-b123-4567-tuvw-7890123456","PK":false,"name":"availability_365","type":"int","children":[]},{"id":"e8f9a0b1-c234-5678-uvwx-8901234567","PK":false,"name":"availability_60","type":"int","children":[]},{"id":"f9a0b1c2-d345-6789-vwxy-9012345678","PK":false,"name":"availability_90","type":"int","children":[]}]},{"id":"a0b1c2d3-e456-7890-wxyz-0123456789","PK":false,"name":"MaximumNights","type":"int","isNN":false,"isArray":false,"children":[]}],"x":990.8999999999999,"y":171.25}],"relations":[{"id":"60idfef0-g190-43f9-f126-0c0e936808fc","fromTableId":"20eaccbc-c790-43b9-b126-080e936808f8","fromFieldId":"d9e0f1a2-b345-6789-bcde-9012345678","toTableId":"40gbdcde-e990-43d9-d126-0a0e936808fa","toFieldId":"b7c8d9e0-f123-4567-defg-7890123456","type":"oneToMany"},{"id":"70jgfef1-h290-43g9-g126-0d0e936808fd","fromTableId":"20eaccbc-c790-43b9-b126-080e936808f8","fromFieldId":"d1e2f3a4-b567-8901-jklm-1234567890","toTableId":"30fbcccd-d890-43c9-c126-090e936808f9","toFieldId":"c2d3e4f5-a678-9012-yzab-2345678901","type":"oneToMany"},{"id":"80khfef2-i390-43h9-h126-0e0e936808fe","fromTableId":"20eaccbc-c790-43b9-b126-080e936808f8","fromFieldId":"d1e2f3a4-b567-8901-jklm-1234567890","toTableId":"50hcedef-f090-43e9-e126-0b0e936808fb","toFieldId":"c4d5e6f7-a890-1234-klmn-4567890123","type":"oneToMany"}],"selectedElementId":null,"isPristine":false}
+{
+  "version": "0.1",
+  "tables": [
+    {
+      "id": "coll_listings",
+      "tableName": "Listings",
+      "fields": [
+        {"id": "fld_lst_pk", "PK": true, "name": "_id", "type": "objectId", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_id", "PK": false, "name": "Listing_ID", "type": "string", "isNN": true, "isArray": false, "children": []},
+        {"id": "fld_lst_hostid", "PK": false, "name": "Host_ID", "type": "string", "isNN": true, "isArray": false, "children": []},
+        {"id": "fld_lst_name", "PK": false, "name": "Name", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_desc", "PK": false, "name": "Description", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_summ", "PK": false, "name": "Summary", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_space", "PK": false, "name": "Space", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_proptype", "PK": false, "name": "Property_Type", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_roomtype", "PK": false, "name": "Room_Type", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_accom", "PK": false, "name": "Accommodates", "type": "int", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_bedrooms", "PK": false, "name": "Bedrooms", "type": "int", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_beds", "PK": false, "name": "Beds", "type": "int", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_bathrooms", "PK": false, "name": "Bathrooms", "type": "decimal", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_bedtype", "PK": false, "name": "Bed_Type", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_price", "PK": false, "name": "Price", "type": "decimal", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_cleanfee", "PK": false, "name": "Cleaning_Fee", "type": "decimal", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_secdep", "PK": false, "name": "Security_Deposit", "type": "decimal", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_extrappl", "PK": false, "name": "Extra_People", "type": "decimal", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_weekprice", "PK": false, "name": "Weekly_Price", "type": "decimal", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_monthprice", "PK": false, "name": "Monthly_Price", "type": "decimal", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_minnight", "PK": false, "name": "Minimum_Nights", "type": "int", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_maxnight", "PK": false, "name": "Maximum_Nights", "type": "int", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_guestinc", "PK": false, "name": "Guests_Included", "type": "int", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_addr", "PK": false, "name": "Address", "type": "object", "isNN": false, "isArray": false, "children": [
+          {"id": "fld_lst_addr_street", "PK": false, "name": "street", "type": "string", "children": []},
+          {"id": "fld_lst_addr_gov", "PK": false, "name": "government_area", "type": "string", "children": []},
+          {"id": "fld_lst_addr_market", "PK": false, "name": "market", "type": "string", "children": []},
+          {"id": "fld_lst_addr_country", "PK": false, "name": "country", "type": "string", "children": []},
+          {"id": "fld_lst_addr_ccode", "PK": false, "name": "country_code", "type": "string", "children": []},
+          {"id": "fld_lst_addr_suburb", "PK": false, "name": "suburb", "type": "string", "isNN": false, "children": []},
+          {"id": "fld_lst_addr_loc", "PK": false, "name": "location", "type": "object", "children": [
+            {"id": "fld_lst_addr_loc_type", "PK": false, "name": "type", "type": "string", "children": []},
+            {"id": "fld_lst_addr_loc_coords", "PK": false, "name": "coordinates", "type": "double", "isArray": true, "children": []},
+            {"id": "fld_lst_addr_loc_exact", "PK": false, "name": "is_location_exact", "type": "bool", "children": []}
+          ]}
+        ]},
+        {"id": "fld_lst_access", "PK": false, "name": "Access", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_interact", "PK": false, "name": "Interaction", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_hrules", "PK": false, "name": "House_Rules", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_amen", "PK": false, "name": "Amenities", "type": "string", "isNN": false, "isArray": true, "children": []},
+        {"id": "fld_lst_avail", "PK": false, "name": "Availability", "type": "object", "isNN": false, "isArray": false, "children": [
+          {"id": "fld_lst_avail_30", "PK": false, "name": "availability_30", "type": "int", "children": []},
+          {"id": "fld_lst_avail_60", "PK": false, "name": "availability_60", "type": "int", "children": []},
+          {"id": "fld_lst_avail_90", "PK": false, "name": "availability_90", "type": "int", "children": []},
+          {"id": "fld_lst_avail_365", "PK": false, "name": "availability_365", "type": "int", "children": []}
+        ]},
+        {"id": "fld_lst_calscrape", "PK": false, "name": "Calendar_Last_Scraped", "type": "date", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_lastscrape", "PK": false, "name": "Last_Scraped", "type": "date", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_cancelpol", "PK": false, "name": "Cancellation_Policy", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_neighover", "PK": false, "name": "Neighborhood_Overview", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_transit", "PK": false, "name": "Transit", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_notes", "PK": false, "name": "Notes", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_images", "PK": false, "name": "Images", "type": "object", "isNN": false, "isArray": false, "children": [
+          {"id": "fld_lst_img_thumb", "PK": false, "name": "thumbnail_url", "type": "string", "isNN": false, "children": []},
+          {"id": "fld_lst_img_med", "PK": false, "name": "medium_url", "type": "string", "isNN": false, "children": []},
+          {"id": "fld_lst_img_pic", "PK": false, "name": "picture_url", "type": "string", "children": []},
+          {"id": "fld_lst_img_xl", "PK": false, "name": "xl_picture_url", "type": "string", "isNN": false, "children": []}
+        ]},
+        {"id": "fld_lst_lsturl", "PK": false, "name": "Listing_URL", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_firstrev", "PK": false, "name": "First_Review", "type": "date", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_lastrev", "PK": false, "name": "Last_Review", "type": "date", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_numrev", "PK": false, "name": "Number_of_Reviews", "type": "int", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_revscores", "PK": false, "name": "Review_Scores", "type": "object", "isNN": false, "isArray": false, "children": [
+          {"id": "fld_lst_rev_checkin", "PK": false, "name": "Checkin", "type": "int", "isNN": false, "children": []},
+          {"id": "fld_lst_rev_clean", "PK": false, "name": "Cleanliness", "type": "int", "isNN": false, "children": []},
+          {"id": "fld_lst_rev_comm", "PK": false, "name": "Communication", "type": "int", "isNN": false, "children": []},
+          {"id": "fld_lst_rev_loc", "PK": false, "name": "Location", "type": "int", "isNN": false, "children": []},
+          {"id": "fld_lst_rev_rate", "PK": false, "name": "Rating", "type": "double", "isNN": false, "children": []},
+          {"id": "fld_lst_rev_val", "PK": false, "name": "Value", "type": "int", "isNN": false, "children": []},
+          {"id": "fld_lst_rev_xfactor", "PK": false, "name": "XFactor", "type": "int", "isNN": false, "children": []}
+        ]},
+        {"id": "fld_lst_revscoreavg", "PK": false, "name": "Review_Scores_Avg", "type": "double", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_lst_transsum", "PK": false, "name": "Transactions", "type": "object", "isNN": false, "isArray": false, "children": [
+          {"id": "fld_lst_trans_bend", "PK": false, "name": "bucket_end_date", "type": "date", "children": []},
+          {"id": "fld_lst_trans_bstart", "PK": false, "name": "bucket_start_date", "type": "date", "children": []},
+          {"id": "fld_lst_trans_count", "PK": false, "name": "transaction_count", "type": "int", "children": []}
+        ]}
+      ],
+      "x": 500,
+      "y": 200
+    },
+    {
+      "id": "coll_hosts",
+      "tableName": "Hosts",
+      "fields": [
+        {"id": "fld_hst_pk", "PK": true, "name": "_id", "type": "objectId", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_id", "PK": false, "name": "Host_ID", "type": "string", "isNN": true, "isArray": false, "children": []},
+        {"id": "fld_hst_name", "PK": false, "name": "Host_Name", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_about", "PK": false, "name": "Host_About", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_loc", "PK": false, "name": "Host_Location", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_neigh", "PK": false, "name": "Host_Neighbourhood", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_picurl", "PK": false, "name": "Host_Picture_URL", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_thumburl", "PK": false, "name": "Host_Thumbnail_URL", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_resprate", "PK": false, "name": "Host_Response_Rate", "type": "int", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_resptime", "PK": false, "name": "Host_Response_Time", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_verif", "PK": false, "name": "Host_Verifications", "type": "string", "isNN": false, "isArray": true, "children": []},
+        {"id": "fld_hst_haspic", "PK": false, "name": "Host_Has_Profile_Pic", "type": "bool", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_idverif", "PK": false, "name": "Host_Identity_Verified", "type": "bool", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_issuper", "PK": false, "name": "Host_Is_Superhost", "type": "bool", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_lstcount", "PK": false, "name": "Host_Listings_Count", "type": "int", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_totlstcount", "PK": false, "name": "Host_Total_Listings_Count", "type": "int", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_hst_url", "PK": false, "name": "Host_URL", "type": "string", "isNN": false, "isArray": false, "children": []}
+      ],
+      "x": 50,
+      "y": 200
+    },
+    {
+      "id": "coll_reviews",
+      "tableName": "Reviews",
+      "fields": [
+        {"id": "fld_rev_pk", "PK": true, "name": "_id", "type": "objectId", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_rev_lstid", "PK": false, "name": "Listing_ID", "type": "string", "isNN": true, "isArray": false, "children": []},
+        {"id": "fld_rev_revid", "PK": false, "name": "Review_ID", "type": "string", "isNN": true, "isArray": false, "children": []},
+        {"id": "fld_rev_reverid", "PK": false, "name": "Reviewer_ID", "type": "string", "isNN": true, "isArray": false, "children": []},
+        {"id": "fld_rev_comments", "PK": false, "name": "Review_Comments", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_rev_date", "PK": false, "name": "Review_Date", "type": "date", "isNN": false, "isArray": false, "children": []}
+      ],
+      "x": 500,
+      "y": 700
+    },
+    {
+      "id": "coll_reviewers",
+      "tableName": "Reviewers",
+      "fields": [
+        {"id": "fld_rever_pk", "PK": true, "name": "_id", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_rever_id", "PK": false, "name": "Reviewer_ID", "type": "string", "isNN": true, "isArray": false, "children": []},
+        {"id": "fld_rever_name", "PK": false, "name": "Reviewer_Name", "type": "string", "isNN": false, "isArray": false, "children": []}
+      ],
+      "x": 50,
+      "y": 700
+    },
+    {
+      "id": "coll_transactions",
+      "tableName": "Transactions",
+      "fields": [
+        {"id": "fld_trans_pk", "PK": true, "name": "_id", "type": "objectId", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_trans_lstid", "PK": false, "name": "Listing_ID", "type": "string", "isNN": true, "isArray": false, "children": []},
+        {"id": "fld_trans_id", "PK": false, "name": "Transaction_ID", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_trans_date", "PK": false, "name": "Transaction_Date", "type": "date", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_trans_price", "PK": false, "name": "Transaction_Price", "type": "decimal", "isNN": false, "isArray": false, "children": []}
+      ],
+      "x": 950,
+      "y": 700
+    },
+    {
+      "id": "coll_amenities",
+      "tableName": "Amenities",
+      "fields": [
+        {"id": "fld_amen_pk", "PK": true, "name": "_id", "type": "objectId", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_amen_name", "PK": false, "name": "Amenity", "type": "string", "isNN": true, "isArray": false, "children": []}
+      ],
+      "x": 950,
+      "y": 50
+    },
+     {
+      "id": "coll_citysummary",
+      "tableName": "CitySummary",
+      "fields": [
+        {"id": "fld_city_pk", "PK": true, "name": "_id", "type": "string", "isNN": false, "isArray": false, "children": []},
+        {"id": "fld_city_name", "PK": false, "name": "City", "type": "string", "isNN": true, "isArray": false, "children": []},
+        {"id": "fld_city_propcount", "PK": false, "name": "PropertyCount", "type": "int", "isNN": true, "isArray": false, "children": []},
+        {"id": "fld_city_avgprice", "PK": false, "name": "AvgPrice", "type": "double", "isNN": true, "isArray": false, "children": []},
+        {"id": "fld_city_topprops", "PK": false, "name": "TopProperties", "type": "object", "isNN": false, "isArray": true, "children": [
+             {"id": "fld_city_topprops_id", "PK": false, "name": "Id", "type": "string", "children": []},
+             {"id": "fld_city_topprops_price", "PK": false, "name": "Price", "type": "decimal", "children": []},
+             {"id": "fld_city_topprops_revcount", "PK": false, "name": "ReviewCount", "type": "int", "children": []}
+         ]}
+      ],
+      "x": 1400,
+      "y": 700
+    }
+  ],
+  "relations": [
+    {"id": "rel_lst_host", "fromTableId": "coll_listings", "fromFieldId": "fld_lst_hostid", "toTableId": "coll_hosts", "toFieldId": "fld_hst_id", "type": "manyToOne"},
+    {"id": "rel_rev_lst", "fromTableId": "coll_reviews", "fromFieldId": "fld_rev_lstid", "toTableId": "coll_listings", "toFieldId": "fld_lst_id", "type": "manyToOne"},
+    {"id": "rel_rev_rever", "fromTableId": "coll_reviews", "fromFieldId": "fld_rev_reverid", "toTableId": "coll_reviewers", "toFieldId": "fld_rever_id", "type": "manyToOne"},
+    {"id": "rel_trans_lst", "fromTableId": "coll_transactions", "fromFieldId": "fld_trans_lstid", "toTableId": "coll_listings", "toFieldId": "fld_lst_id", "type": "manyToOne"}
+  ],
+  "selectedElementId": null,
+  "isPristine": false
+}
