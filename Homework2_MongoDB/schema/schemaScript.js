@@ -1,32 +1,3 @@
-db.createCollection("Hosts", {
-  validator: {
-    $jsonSchema: {
-      bsonType: "object",
-      title: "Hosts",
-      required: [],
-      properties: {
-        "_id": { bsonType: "objectId" },
-        "Host_ID": { bsonType: "string" },
-        "Host_Name": { bsonType: "string" },
-        "Host_About": { bsonType: "string" },
-        "Host_Location": { bsonType: "string" },
-        "Host_Neighbourhood": { bsonType: "string" },
-        "Host_Picture_URL": { bsonType: "string" },
-        "Host_Thumbnail_URL": { bsonType: "string" },
-        "Host_Response_Rate": { bsonType: "int" },
-        "Host_Response_Time": { bsonType: "string" },
-        "Host_Verifications": { bsonType: "array", items: { bsonType: "string" } },
-        "Host_Has_Profile_Pic": { bsonType: "bool" },
-        "Host_Identity_Verified": { bsonType: "bool" },
-        "Host_Is_Superhost": { bsonType: "bool" },
-        "Host_Listings_Count": { bsonType: "int" },
-        "Host_Total_Listings_Count": { bsonType: "int" },
-        "Host_URL": { bsonType: "string" },
-      },
-    },
-  },
-});
-
 db.createCollection("Transactions", {
   validator: {
     $jsonSchema: {
@@ -133,6 +104,35 @@ db.createCollection("Reviewers", {
   },
 });
 
+db.createCollection("Hosts", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      title: "Hosts",
+      required: [],
+      properties: {
+        "_id": { bsonType: "objectId" },
+        "Host_ID": { bsonType: "string" },
+        "Host_Name": { bsonType: "string" },
+        "Host_About": { bsonType: "string" },
+        "Host_Location": { bsonType: "string" },
+        "Host_Neighbourhood": { bsonType: "string" },
+        "Host_Picture_URL": { bsonType: "string" },
+        "Host_Thumbnail_URL": { bsonType: "string" },
+        "Host_Response_Rate": { bsonType: "int" },
+        "Host_Response_Time": { bsonType: "string" },
+        "Host_Verifications": { bsonType: "array", items: { bsonType: "string" } },
+        "Host_Has_Profile_Pic": { bsonType: "bool" },
+        "Host_Identity_Verified": { bsonType: "bool" },
+        "Host_Is_Superhost": { bsonType: "bool" },
+        "Host_Listings_Count": { bsonType: "int" },
+        "Host_Total_Listings_Count": { bsonType: "int" },
+        "Host_URL": { bsonType: "string" },
+      },
+    },
+  },
+});
+
 db.createCollection("Amenities", {
   validator: {
     $jsonSchema: {
@@ -154,7 +154,7 @@ db.createCollection("CitySummary", {
       title: "CitySummary",
       required: [],
       properties: {
-        "_id": { bsonType: "string" },
+        "_id": { bsonType: "objectId" },
         "City": { bsonType: "string" },
         "PropertyCount": { bsonType: "int" },
         "AvgPrice": { bsonType: "double" },
