@@ -9787,7 +9787,7 @@ Warning: 4899 documents have 'monthly_price' not as decimal.
 <ul>
 <li>We applied <strong>data type conversion</strong> to the price-related fields (<code>price</code>, <code>security_deposit</code>, <code>cleaning_fee</code>, <code>weekly_price</code>, <code>monthly_price</code>), ensuring they are consistently stored as <code>Decimal128</code> (or <code>double</code>), because these represent monetary values. Handling <code>null</code> or missing values appropriately during conversion (e.g., defaulting to <code>null</code> or <code>0.0</code> if applicable) ensures accurate financial calculations. We expect <strong>improved query performance for range/comparison queries on prices and reliable aggregation results (like averages)</strong>.</li>
 </ul>
-<p><strong>Note:</strong> <code>weekly_price</code> and <code>monthly_price</code> often appear as <code>None</code> after conversion, indicating they were originally missing or <code>null</code>, which is expected.</p>
+<p><strong>Note:</strong> <code>weekly_price</code> and <code>monthly_price</code> often appear as <code>None</code> after conversion, indicating they were originally missing or <code>null</code>.</p>
 </div>
 </div>
 </div>
@@ -11980,7 +11980,6 @@ Total fields: 85
 <li>As shown in the results above, the maximum value for the field <strong><code>price</code></strong> is $48\;842.0$. The field price indicates the price per night for a listing.<ul>
 <li>This value is extremely high and seems unrealistic for a single night stay.</li>
 <li>It is possible that this value is a result of data entry errors or outliers in the dataset.</li>
-<li>To further investigate, we can check the distribution of prices and identify any potential outliers.</li>
 </ul>
 </li>
 </ul>
@@ -12133,8 +12132,8 @@ Document with _id: 744242 has maximum_nights: 2147483647           | Host URL: h
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>As we can from the results above, there are some listings with $0$ <code>bathrooms</code> with property types that do not make sense (e.g *<strong>House</strong><em>, </em><strong>Apartment</strong>*, etc.).<ul>
-<li>To further investigate, we would need more information about each listings, access to the databases's metadata and to the host_url (links to the listings don't seem to work).</li>
+<li>As we can see from the results above, there are some listings with $0$ <code>bathrooms</code> with property types that do not make sense (e.g *<strong>House</strong><em>, </em><strong>Apartment</strong>*, etc.).<ul>
+<li>To further investigate, we would need more information about each listings, access to the database's metadata and to the host_url (links to the listings don't seem to work).</li>
 <li>Hence no changes will be made</li>
 </ul>
 </li>
@@ -12265,8 +12264,8 @@ Casa particular (Cuba): 1
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>As we can from the results above, there are some listings with $0$ <code>bedrooms</code> with property types that do not make sense (e.g *<strong>House</strong>* etc.).<ul>
-<li>As explained in the case of bathrooms, to further investigate these cases, we would need more information about each listings, access to the databases's metadata and to the <strong><code>host_url</code></strong> (links to the listings don't seem to work).</li>
+<li>As we can see from the results above, there are some listings with $0$ <code>bedrooms</code> with property types that do not make sense (e.g *<strong>House</strong>* etc.).<ul>
+<li>As explained in the case of bathrooms, to further investigate these cases, we would need more information about each listings, access to the database's metadata and to the <strong><code>host_url</code></strong> (links to the listings don't seem to work).</li>
 <li>Hence no changes will be made</li>
 </ul>
 </li>
@@ -12723,11 +12722,13 @@ Price Range: 20001-50000, Count: 1, Average Price: 48842.00
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li><p>We noticed that $245$ ($4.41\%$) listings have a <strong><code>number_of_reviews</code></strong> that doesn’t match the actual number of reviews in the reviews array. <strong>For now, we’re not doing anything</strong> about it because this field is probably just a leftover helper or display field from the past. Since it’s not causing any issues and fixing it would take extra time and processing, we’re choosing to leave it as is. If it ever becomes important later, we can clean it up in the background without affecting the system.</p>
+<li><p>We noticed that $244$ ($4.39\%$) listings have a <strong><code>number_of_reviews</code></strong> that doesn’t match the actual number of reviews in the reviews array. <strong>For now, we’re not doing anything</strong> about it because this field is probably just a leftover helper or display field from the past. Since it’s not causing any issues and fixing it would take extra time and processing, we’re choosing to leave it as is. If it ever becomes important later, we can clean it up in the background without affecting the system.</p>
 </li>
 <li><p>Additionally, due to the lack of metadata, we don't know if this mismatch is due to a problem during the web scraping process or due to an out of sync issue.</p>
 </li>
 </ul>
+<br/>
+<p><strong>Note:</strong> The same analysis could be done for <strong><code>transactions.transaction_count</code></strong> but due to the same reason we will not do it.</p>
 </div>
 </div>
 </div>
@@ -13277,6 +13278,17 @@ Price Range: 20001-50000, Count: 1, Average Price: 48842.00
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Note:</strong> In the original data model, where transactions (<code>transactions.transactions</code>) are <strong>embedded</strong> within the main listing document (<code>listingsAndReviews_HW2</code>), <strong>all transactions within that document inherently belong to that listing</strong>. There isn't a <code>listing_id</code> field within each individual transaction to verify if it belongs to another listing.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h4 id="Invalid-Dates"><strong>Invalid Dates</strong><a class="anchor-link" href="#Invalid-Dates">¶</a></h4>
 </div>
 </div>
@@ -13355,26 +13367,40 @@ Price Range: 20001-50000, Count: 1, Average Price: 48842.00
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [242]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Check if 'first_review' &lt; 'transactions.transactions.date' (Invalid data)</span>
 <span class="n">invalid_dates</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">listingsAndReviews_HW2</span><span class="o">.</span><span class="n">find</span><span class="p">({</span>
-    <span class="s2">"$expr"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"$expr"</span><span class="p">:</span> <span class="p">{</span>        
+        <span class="c1"># Check if first_review is less than the date of the first transaction</span>
         <span class="s2">"$lt"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"$first_review"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"$arrayElemAt"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"$transactions.transactions.date"</span><span class="p">,</span> <span class="mi">0</span><span class="p">]}]</span>
     <span class="p">}</span>
 <span class="p">})</span>
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">invalid_dates</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">invalid_dates</span><span class="p">)))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">invalid_dates</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Document with _id: </span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="s1">'_id'</span><span class="p">]</span><span class="si">}</span><span class="s2"> has first_review: </span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="s1">'first_review'</span><span class="p">]</span><span class="si">}</span><span class="s2"> &lt; transactions.transactions.date: </span><span class="si">{</span><span class="n">doc</span><span class="p">[</span><span class="s1">'transactions'</span><span class="p">][</span><span class="s1">'transactions'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'date'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"No documents found with first_review &lt; transactions.transactions.date."</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of documents with first_review &lt; transactions.transactions.date: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">invalid_dates</span><span class="p">))</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Number of documents with first_review &lt; transactions.transactions.date: 0
+</pre>
 </div>
 </div>
 </div>
@@ -13491,13 +13517,13 @@ Price Range: 20001-50000, Count: 1, Average Price: 48842.00
 <tbody>
 <tr>
 <td style="text-align:left"><strong>1</strong></td>
-<td style="text-align:left"><strong>Assess Data Size</strong></td>
+<td style="text-align:left">Assess Data Size</td>
 <td style="text-align:left">Determine current collection volume and size</td>
 <td style="text-align:left"><code>listingsAndReviews_HW2</code></td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>2a</strong></td>
-<td style="text-align:left"><strong>Most Common Use Case</strong></td>
+<td style="text-align:left">Most Common Use Case</td>
 <td style="text-align:left">Show property info to customers (core details + sample reviews)</td>
 <td style="text-align:left"><code>Listings</code>, <code>Reviews</code></td>
 </tr>
@@ -13505,13 +13531,13 @@ Price Range: 20001-50000, Count: 1, Average Price: 48842.00
 <td style="text-align:left"><strong>2b (Q7)</strong></td>
 <td style="text-align:left">Unique amenities list for host registration</td>
 <td style="text-align:left">Show all unique amenities; rarely changes</td>
-<td style="text-align:left"><code>Listings</code>, <code>Amenities</code> (New)</td>
+<td style="text-align:left"><code>Listings</code>, <code>Amenities</code></td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>2c (Q8)</strong></td>
 <td style="text-align:left">Top 20 reviewers and fast review count lookup</td>
 <td style="text-align:left">Rank reviewers and return count per reviewer</td>
-<td style="text-align:left"><code>Reviews</code>, <code>Reviewers</code> (New)</td>
+<td style="text-align:left"><code>Reviews</code>, <code>Reviewers</code></td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>2d (Q9)</strong></td>
@@ -13523,13 +13549,13 @@ Price Range: 20001-50000, Count: 1, Average Price: 48842.00
 <td style="text-align:left"><strong>2e (Q10)</strong></td>
 <td style="text-align:left">Avg transaction value per property for time period</td>
 <td style="text-align:left">Time-based aggregation on transactions</td>
-<td style="text-align:left"><code>Transactions</code> (New), <code>Listings</code></td>
+<td style="text-align:left"><code>Transactions</code>, <code>Listings</code></td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>2f (Q11)</strong></td>
 <td style="text-align:left">Summary page of top 10 cities + top listings</td>
 <td style="text-align:left">Show city-level stats and example listings</td>
-<td style="text-align:left"><code>Listings</code>, <code>Reviews</code>, <code>CitySummary</code> (New)</td>
+<td style="text-align:left"><code>Listings</code>, <code>Reviews</code>, <code>CitySummary</code></td>
 </tr>
 </tbody>
 </table>
@@ -13571,68 +13597,68 @@ Price Range: 20001-50000, Count: 1, Average Price: 48842.00
 <table>
 <thead>
 <tr>
-<th style="text-align:left"><strong>Entities</strong></th>
+<th style="text-align:center"><strong>From Entity</strong></th>
+<th style="text-align:center"><strong>To Entity</strong></th>
 <th style="text-align:left"><strong>Relationship Type</strong></th>
-<th style="text-align:left"><strong>Cardinality</strong></th>
+<th style="text-align:center"><strong>Cardinality</strong></th>
 <th style="text-align:left"><strong>Embed or Reference?</strong></th>
 <th style="text-align:left"><strong>Reasoning</strong></th>
-<th style="text-align:left"><strong>Context in Project</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><code>Listings</code></td>
-<td style="text-align:left"><code>Hosts</code></td>
+<td style="text-align:center"><code>Listings</code></td>
+<td style="text-align:center"><code>Hosts</code></td>
 <td style="text-align:left">Listing has one Host</td>
-<td style="text-align:left">N:1</td>
+<td style="text-align:center">N:1</td>
 <td style="text-align:left"><strong>Reference <code>Hosts</code> in <code>Listings</code></strong></td>
 <td style="text-align:left">Avoid duplication; host info reused/updated</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>Listings</code></td>
-<td style="text-align:left"><code>Reviews</code></td>
+<td style="text-align:center"><code>Listings</code></td>
+<td style="text-align:center"><code>Reviews</code></td>
 <td style="text-align:left">Listing has many Reviews</td>
-<td style="text-align:left">1:N</td>
+<td style="text-align:center">1:N</td>
 <td style="text-align:left"><strong>Reference <code>Listings</code>  in <code>Reviews</code></strong></td>
 <td style="text-align:left">Reviews grow; keeps listing doc lean</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>Reviews</code></td>
-<td style="text-align:left"><code>Reviewers</code></td>
+<td style="text-align:center"><code>Reviews</code></td>
+<td style="text-align:center"><code>Reviewers</code></td>
 <td style="text-align:left">Review written by one Reviewer</td>
-<td style="text-align:left">N:1</td>
+<td style="text-align:center">N:1</td>
 <td style="text-align:left"><strong>Reference <code>Reviewers</code> in <code>Reviews</code></strong></td>
 <td style="text-align:left">Reviewers write multiple reviews; enables reviewer tracking</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>Listings</code></td>
-<td style="text-align:left"><code>Transactions</code></td>
+<td style="text-align:center"><code>Listings</code></td>
+<td style="text-align:center"><code>Transactions</code></td>
 <td style="text-align:left">Listing has many Transactions</td>
-<td style="text-align:left">1:N</td>
-<td style="text-align:left"><strong>Reference <code>Listing</code> in <code>Transactions</code></strong></td>
+<td style="text-align:center">1:N</td>
+<td style="text-align:left"><strong>Reference <code>Listings</code> in <code>Transactions</code></strong></td>
 <td style="text-align:left">Time-series data; accessed separately</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>Listings</code></td>
-<td style="text-align:left"><code>Amenities</code> (array)</td>
+<td style="text-align:center"><code>Listings</code></td>
+<td style="text-align:center"><code>Amenities</code> (array)</td>
 <td style="text-align:left">Listing has many amenities</td>
-<td style="text-align:left">1:N</td>
-<td style="text-align:left"><strong>Embed <code>Amenities</code> in <code>Listing</code></strong></td>
+<td style="text-align:center">1:N</td>
+<td style="text-align:left"><strong>Embed <code>Amenities</code> in <code>Listings</code></strong></td>
 <td style="text-align:left">Small, static data; needed for listing reads</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>City</code> (Optional)</td>
-<td style="text-align:left"><code>Listings</code></td>
+<td style="text-align:center"><code>City</code> (Optional)</td>
+<td style="text-align:center"><code>Listings</code></td>
 <td style="text-align:left">City has many listings</td>
-<td style="text-align:left">1:N</td>
+<td style="text-align:center">1:N</td>
 <td style="text-align:left"><strong>Both sides</strong></td>
 <td style="text-align:left">City identified via <code>Listing.Address.market</code>; enables grouping/aggregation</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>Listings</code></td>
-<td style="text-align:left"><code>ReviewScores</code></td>
+<td style="text-align:center"><code>Listings</code></td>
+<td style="text-align:center"><code>ReviewScores</code></td>
 <td style="text-align:left">Listing has one set of review scores</td>
-<td style="text-align:left">1:1</td>
+<td style="text-align:center">1:1</td>
 <td style="text-align:left"><strong>Embed <code>Review Scores</code> in <code>Listings</code></strong></td>
 <td style="text-align:left">Small, core data;</td>
 </tr>
@@ -17055,17 +17081,6 @@ Castle                 | Montreal                         | Montreal
                                     'weights': SON([('Amenity', 1)])},
  'TotalFrequency_-1': {'key': [('TotalFrequency', -1)], 'v': 2},
  '_id_': {'key': [('_id', 1)], 'v': 2}}
-{'Amenity_1': {'key': [('Amenity', 1)], 'v': 2},
- 'Amenity_text_TotalFrequency_-1': {'default_language': 'english',
-                                    'key': [('_fts', 'text'),
-                                            ('_ftsx', 1),
-                                            ('TotalFrequency', -1)],
-                                    'language_override': 'language',
-                                    'textIndexVersion': 3,
-                                    'v': 2,
-                                    'weights': SON([('Amenity', 1)])},
- 'TotalFrequency_-1': {'key': [('TotalFrequency', -1)], 'v': 2},
- '_id_': {'key': [('_id', 1)], 'v': 2}}
 </pre>
 </div>
 </div>
@@ -17800,10 +17815,10 @@ Execution time: 0.0039 seconds
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [302]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Performance of the query (Q8)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Performance of the query (Q8) - Find the number of reviews for a given reviewer ID</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\033</span><span class="s2">[1mQuery performance:</span><span class="se">\033</span><span class="s2">[0m"</span><span class="p">)</span>
 <span class="n">pprint</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Reviewers</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s2">"Reviewer_ID"</span><span class="p">:</span> <span class="n">reviewer_id</span><span class="p">})</span><span class="o">.</span><span class="n">explain</span><span class="p">())</span>
 </pre></div>
@@ -17926,7 +17941,7 @@ Execution time: 0.0039 seconds
 <p><strong>Optimization Analysis (Q8):</strong></p>
 <ul>
 <li><strong>Top 20 List:</strong> The original query required unwinding all reviews and grouping (~0.58s). By applying the <strong>Computed Pattern</strong> (adding <code>ReviewCount</code> to the <code>Reviewers</code> collection) and <strong>Indexing</strong> (<code>ReviewCount: -1</code>), retrieving the top 20 reviewers becomes a simple <code>find().sort().limit()</code> operation on the <code>Reviewers</code> collection. This is significantly faster (~0.64s including the update vs ~0.58s initially - <em>Note: the aggregation to calculate counts for the update dominates here, but subsequent reads are fast</em>), as it directly uses the pre-computed and indexed count.</li>
-<li><strong>Individual Lookup:</strong> The <code>get_review_count</code> function benefits immensely. Instead of aggregating the <code>Reviews</code> collection or the original <code>listingsAndReviews_HW2</code> collection (~0.14s-0.16s), it performs a fast, indexed <code>find_one</code> on the <code>Reviewers</code> collection using <code>Reviewer_ID</code> (~0.005s) or an aggregation with lookup for <code>Reviewer_Name</code> (~11.1s without name index, demonstrating the value of ID lookups or needing a name index).</li>
+<li><strong>Individual Lookup:</strong> The <code>get_review_count</code> function benefits immensely. Instead of aggregating the <code>Reviews</code> collection (~0.14s) or the original <code>listingsAndReviews_HW2</code> collection, it performs a fast, indexed <code>find_one</code> on the <code>Reviewers</code> collection using either <code>Reviewer_ID</code> (~0.002s) or <code>Reviewer_Name</code> (which would benefit from its own index for similar speed).</li>
 </ul>
 </blockquote>
 <p>This demonstrates the benefit of the new schema for the frequent, targeted lookup requirement, while the top-20 list might be better handled by pre-computation (<strong>Computed Pattern</strong>) in a production scenario.</p>
@@ -20243,16 +20258,6 @@ Maui              | 153            | 286.59    |
  'Reviewer_Name': '思羽',
  'Reviewer_ID': '135123163',
  'ReviewCount': 2}
-{'_id': ObjectId('67fea8f92e55f326b63fac8a'),
- 'Listing_ID': '20000000',
- 'Review_ID': '99999999',
- 'Reviewer_ID': '135123163',
- 'Review_Comments': 'Great loft!',
- 'Review_Date': datetime.datetime(2025, 4, 15, 19, 44, 9, 63000)}
-{'_id': ObjectId('67fea80ea6298d01ad077fca'),
- 'Reviewer_Name': '思羽',
- 'Reviewer_ID': '135123163',
- 'ReviewCount': 2}
 </pre>
 </div>
 </div>
@@ -20496,15 +20501,6 @@ Average score across all review metrics for property ID 20000000: <span class="a
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
 <span class="ansi-bold">Review_Scores for property ID 20000000:</span>
-{'_id': ObjectId('67fea8f82e55f326b63fac89')}
-
-<span class="ansi-bold">Updated Review_Scores for property ID 20000000:</span>
-{'_id': ObjectId('67fea8f82e55f326b63fac89'), 'Review_Scores': {'XFactor': 10}}
-
-Execution time: 0.0103 seconds
-
-
-Average score with new metric: <span class="ansi-bold">10.0</span>
 {'_id': ObjectId('67fea8f82e55f326b63fac89')}
 
 <span class="ansi-bold">Updated Review_Scores for property ID 20000000:</span>
