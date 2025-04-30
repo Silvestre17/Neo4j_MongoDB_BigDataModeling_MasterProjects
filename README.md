@@ -1,164 +1,147 @@
-# BDMM | Assignment 1 & 2 | 24.25 - [Group 5]
+# **💾 BDMM | Assignments 1 & 2 | 24.25 - [Group 5] 📦**
 
-**Assignment 1** & **Assignment 2** of the Big Data Management and Modelling course of the Master's in Data Science and Advanced Analytics at NOVA IMS.
+This repository contains the solutions for **Assignment 1 (Neo4j)** and **Assignment 2 (MongoDB)** for the **Big Data Management and Modelling (BDMM)** course, part of the Master's in Data Science and Advanced Analytics at NOVA IMS.
 
-## **Links**
+<p align="center">
+    <a href="https://github.com/Silvestre17/BDMM_Assignment1-2">
+        <img src="https://img.shields.io/badge/GitHub_Repository-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repo">
+    </a>
+    <a href="https://www.python.org/">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+    </a>
+</p>
 
-> [**👨‍💻 GitHub Repository**](https://github.com/Silvestre17/BDMM_Assignment1-2)
+## 👥 Group 5 Members
 
-<br>
-
-#### **Group 5**
-
-  - Alexandre Gonçalves, 20240738
-  - André Silvestre, 20240502
-  - Filipa Pereira, 20240509
-  - João Henriques, 20240499
-  - Umeima Mahomed, 20240543
-  
-<br>
+*   Alexandre Gonçalves, 20240738
+*   André Silvestre, 20240502
+*   Filipa Pereira, 20240509
+*   João Henriques, 20240499
+*   Umeima Mahomed, 20240543
 
 ---
 
-<details>
-  
-  <summary>
+## 1️⃣ Assignment 1: The Beer Project 🍺 (Neo4j)
 
-  # **1️⃣ Assignment 1**
+</summary>
 
-  </summary>
+<p align="center">
+    <a href="https://neo4j.com/"><img src="https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/></a>
+    <a href="https://pypi.org/project/neo4j/"><img src="https://img.shields.io/badge/neo4j_driver-008CC1?style=for-the-badge&logo=python&logoColor=white" alt="Neo4j Python Driver"/></a>
+    <a href="https://www.kaggle.com/datasets/ehallmar/beers-breweries-and-beer-reviews"><img src="https://img.shields.io/badge/Dataset-Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle Dataset"/></a>
+</p>
 
-## **🍺 The Beer project  🍺** <img src="https://retina.ai/app/uploads/2020/05/neo4j.png" width="50" style="margin-left: 10px;">
+This assignment explores the use of **Neo4j**, a graph database, to analyze relationships within data about beers, breweries, and reviews. Graph databases provide a natural way to navigate and query highly connected information. The project utilizes a dataset based on [Evan Hallmark's Kaggle dataset](https://www.kaggle.com/ehallmar/beers-breweries-and-beer-reviews).
 
+### 📰 Problem Description
 
+Assume the role of a Data Management professional in an analytics company. Your task is to explore the provided Neo4j database using the Python `neo4j` connector and/or the Neo4j Browser tool. You need to answer specific analytical questions, requiring adjustments and cleaning of the database schema along the way. Document all changes made to the database.
 
-As it was shown in classes, graph databases are a natural way of navegating related information. For this first project we will be taking a graph database to analyse beer and breweries!   
+### 🗺️ Final Database Schema
 
-The project datasets are based on [kaggle](https://www.kaggle.com/ehallmar/beers-breweries-and-beer-reviews), released by Evan Hallmark. 
+The following schema represents the structure of the graph database after cleaning and adjustments made during the assignment:
 
-### **📰 Problem description**
-
-Imagine you are working in the Data Management department of Analytics company.
-Explore the database via python neo4j connector and/or the graphical tool in the NEO4J webpage. Answer the questions while adjusting the database to meet the needs of your colleagues.
-Please record and keep track of your database changes, and submit the file with all cells run and with the output shown.
-
-<br>
-
-## **🧮 Database Schema**
-
-<center><img src="./Homework1_Neo4J_TheBeerProject/img/graph_afterCleaningEdited.svg" width="1000"></center>
+<p align="center">
+  <img src="./Homework1_Neo4J_TheBeerProject/img/graph_afterCleaningEdited.svg" alt="Final Neo4j Beer Project Schema" width="800">
+</p>
+<p align="center"><i>Figure 1.1: Final Database Schema for the Beer Project</i></p>
 
 <br>
 
-## **🔢 Questions**
+### ❓ Questions Addressed
 
-1. Explore the database: get familiar with current schema, elements and other important database parameters. [1 point]
-2. Adjust the database and mention reasoning behind: e.g. clean errors, remove redundancies, adjust schema as necessary. Visualize the final version of database schema. [4 points]
-3. Analytics department requires the following information for the biweekly reporting: [5 points]
-    1. How many reviews has the beer with the most reviews?
-    2. Which three users wrote the most reviews about beers?
-    3. Find all beers that are described with following words: 'fruit', 'complex', 'nutty', 'dark'.
-    4. Which top three breweries produce the largest variety of beer styles?
-    5. Which country produces the most beer styles?
-4. Market Analysis department in your company accesses and updates the trends data on the daily basis. Given that, consider how you need to optimize the database and its performance so that the following queries are efficient. Measure performance to communicate your improvements using PROFILE before final query. Answer the following: [4 points]
-    1. Using ABV score, find five strongest beers, display their ABV score and the corresponding brewery? Keep in mind that the strongest known beer is Snake Venom, and deal with the error entries in the database.
-    2. Using the answer from question 2, find the top 5 distict beer styles with the highest average score of smell + feel that were reviewed by the third most productive user. Keep in mind that cleaning the database earlier should ensure correct results.
-5. Answer **two out of four** of the following questions using Graph Algorithms (gds): [NB: make sure to clear the graph before using it again] For the quarterly report, Analytics department the following information. [6 points]
-    1. Which two countries are most similar when it comes to their top five most produced Beer styles?
-    2. Which beer is the most popular when considering the number of users who reviewed it? 
-    3. ~~Users are connected together by their reviews of beers, taking into consideration the "smell" score they assign as a weight, how many communities are formed from these relationships? How many users are in the three largest communities?~~
-    4. ~~Which user is the most influential when it comes to reviews of distinct beers by style?~~
+1.  **Database Exploration:** Familiarization with the initial schema, nodes, relationships, and properties. [1 point]
+2.  **Schema Adjustment & Cleaning:** Identification and correction of errors, removal of redundancies, schema refinement with justification, and visualization of the final schema (as shown above). [4 points]
+3.  **Biweekly Reporting Queries:** [5 points]
+    *   a. Find the review count for the beer with the most reviews.
+    *   b. Identify the top three users who wrote the most reviews.
+    *   c. Find beers described with keywords: 'fruit', 'complex', 'nutty', 'dark'.
+    *   d. Determine the top three breweries producing the widest variety of beer styles.
+    *   e. Identify the country producing the most distinct beer styles.
+4.  **Performance Optimization Queries:** Optimization for daily access/updates, using `PROFILE` to measure improvements. [4 points]
+    *   a. Find the five strongest beers by ABV (handling errors like Snake Venom), displaying ABV and brewery.
+    *   b. Find the top 5 distinct beer styles with the highest average (smell + feel) score, reviewed by the third most active user.
+5.  **Graph Algorithm Queries (GDS):** Answer **two** using the Neo4j Graph Data Science library. [6 points]
+    *   a. Determine the two most similar countries based on their top five most produced beer styles.
+    *   b. Identify the most popular beer based on the number of unique reviewers.
+    *   c. ~~Community detection based on review smell scores.~~
+    *   d. ~~Identify the most influential user based on reviews of distinct beer styles.~~
 
-</details>
-
-
-<details>
-  
-  <summary>
-
-  # **2️⃣ Assignment 2**
-
-  </summary>
-
-## **MongoDB** <img src="https://www.svgrepo.com/show/331488/mongodb.svg" width="20">
-
-## **🔢 Questions**
+*Detailed answers and code can be found in the [Homework1_Neo4J_TheBeerProject](.Homework1_Neo4J_TheBeerProject) directory.*
 
 
-<font size="8">1. Data Modelling</font>
+---
 
-<font size="4">Congratulations! You’ve been hired as part of the new Data Engineering and Management team in the AirBNB Business Intelligence department. The company is restructuring due to unsatisfactory performance from the previous teams.
-
-Before leaving, the head of the Data Modelling department highlighted several issues:
-
-**Data Storage**: A lot of data about AirBNB listings is stored in a single document. While this approach has some advantages, it has also caused performance issues. Queries are slow, and the team didn’t apply patterns, which could improve performance by optimizing the data model. Indexes were also not used.
-
-**Reviews Growth**: The number of reviews for AirBNB is growing rapidly. Currently, we overwrite reviews regularly, but the Business Intelligence department will benefit from storing all reviews and analyzing them over time.
-
-**Data Errors**: There are errors in the data collection, such as duplicate data entries and incorrect timestamps for transactions. The new team will need to decide how to fix these issues.
-
-**Your Role**: In your new role, you’ll need to consider how each database query is used, how often it is needed, and its impact on reads and writes. You should update the database schema to optimize for business use cases. Use tools like embedding, linking, indexes, and patterns to improve the data model. You may need to create new fields, documents, or collections. Be sure to document the pattern you’re applying and the reasons behind your decisions, especially when dealing with duplication and risks of outdated data.
-
-**Key tasks include**:
-
-1. Streamlining the data collection process.
-2. Cleaning up the data and optimizing what will be returned for each use case.
-3. Applying the correct patterns to speed up common queries.
-4. Ensuring departments get accurate and relevant information from the database.
-5. Sharing the updated data model schema with other departments.
-
-**Good Practices**: [Check Chapter 6, Mastering MongoDB]
-
-1. All newly created fields should have capitalized names.
-2. New queries should work with the most up-to-date database version. If you make multiple changes, all queries should still work after the final updates.
-3. For some queries, you may need to change the database schema.
-4. When you are applying specific patterns, like polymorphic, subset, or bucket, name them accordingly. 
-5. Document each major transformation using this format:
-*“We applied {transformation name} because {reasoning behind it}. We expect {change/result} based on {observable measure, such as query speed, number of documents returned, index use, etc.}.”*
-
-</font>
+## 2️⃣ Assignment 2: AirBNB Data Modelling 🏠 (MongoDB)
 
 
-**Data Cleanup and Schema Adjustments:** [9 points in total]
+<p align="center">
+    <a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/></a>
+    <a href="https://pymongo.readthedocs.io/en/stable/"><img src="https://img.shields.io/badge/PyMongo-47A248?style=for-the-badge&logo=python&logoColor=white" alt="PyMongo"/></a>
+</p>
 
-1) Before working on the queries below, review the data and adjust the schema based on the typical use case described.
+This assignment focuses on **MongoDB**, a NoSQL document database, and addresses data modeling challenges within the context of AirBNB listings data. The goal is to optimize the database schema for various business use cases, improve query performance, and handle data quality issues using appropriate MongoDB patterns and features.
 
-**Typical Use Case**: The most common use of the database is to show property listing information to customers. A query retrieves a listing document from the database. Currently, retrieving a listing takes too long. Decide what information should be included in a typical query and optimize the structure accordingly. For example, customers usually only need a sample of reviews, not all reviews (even though all reviews are stored). They also don’t need past transaction data. Update the document schema to fit this use case. This might involve creating new collections or documents.
+### 📰 Problem Scenario & Challenges
 
-**Data Cleanup**: Review the data for any errors (such as transactions that don’t belong to the listing) or unnecessary duplication, and clean it up where needed.
+You are part of a new Data Engineering team at AirBNB tasked with restructuring the database due to performance issues and data quality problems left by previous teams. Key challenges include:
 
-**Standard Difficulty Questions:** [2 points per question]
+*   **Large Documents:** Storing excessive listing information in single documents leads to slow queries.
+*   **Lack of Patterns:** No data modeling patterns (e.g., embedding, linking, subset, bucket) were applied to optimize performance.
+*   **Missing Indexes:** Inefficient querying due to the absence of indexes.
+*   **Review Scalability:** Rapid growth in reviews requires a better storage strategy than simply overwriting.
+*   **Data Errors:** Duplicate entries and incorrect timestamps need correction.
 
-2)	Once a month, we reward hosts with recognition. Select three superhosts with at least two listings that can accommodate more than four people.
+### 🎯 Key Tasks
 
-3)	The company considers inevsting into property to rent. Which bed type is most common in listings with a waterfront and a dishwasher in New York?
+Your role involves redesigning the database schema considering query usage frequency and read/write impacts. This includes:
 
-4)	We're considering hiring someone to write reviews professionally. Who wrote the longest review in New York?
+1.  Streamlining data collection.
+2.  Cleaning data and optimizing query returns.
+3.  Applying MongoDB patterns (Embedding, Linking, Subset, Bucket, Polymorphic, etc.) to accelerate common queries.
+4.  Ensuring data accuracy and relevance.
+5.  Documenting transformations and pattern usage with clear reasoning and expected outcomes (e.g., improved query speed, reduced document size).
+6.  Sharing the final, optimized data model schema.
 
-5)	To assess the security of different areas, what is the biggest and smallest (price-security deposit) difference per number of visitors at a property?
+### ✨ Final Data Model Schema Design
 
-6)  Identify areas by whether they are typically used for short breaks, like weekend mini breaks, or whether they are more suitable for long trips. This information support targeted advertising of different customer types. It is not expected to change much over time so we won’t look to update it, we just require current view. What is the average duration of stay (in nights) per type of property per city (you can use the maximum_nights to measure length of stays)? For each property type return the city with the highest and lowest average value.
+The following diagram illustrates the optimized MongoDB schema designed during this assignment, incorporating various modeling patterns:
 
-**Advanced Difficulty Questions (Consider database optimization for these queries):** [3 points per question]
+<p align="center">
+  <img src="./Homework2_MongoDB/img/FinalSchemaDesign.png" alt="Final MongoDB AirBNB Schema" width="800">
+</p>
+<p align="center"><i>Figure 2.1: Optimized MongoDB Schema for AirBNB Data</i></p>
 
-7)	We are creating a new webpage for hosts when setting up their account. It will list suggested typical amenities. This data will need to be available every time a host registers a property but is not expected to change very much. The starting point for the list will be all unique amenities currently listed in properties (across all documents). Optimise the database for this use case and show how the data should be queried.
+<br>
 
-8)	We plan to rtack our reviewers better. We want to create a webpage that shows the top 20 reviewers and the count of the number of reviews of each of these reviewers. This webpage should be kept up to date. It should also have a link to return the number of reviews for a given reviewer ID or Name (show how to query for number of reviews by ID or query quickly).
+### ❓ Questions Addressed
 
-9)	For each property we store review scores across different metrics (accuracy, check-in, cleanliness etc). We consider adding more metrics, although there is no clarity on what these will be. We want to be able to easily query the average score across all of these metrics, including any new metrics that might be added without changing the query. Adjust the data model so this can be done and show the query for an example property.
+**Data Cleanup and Schema Adjustments:** [9 points]
 
-10)	We aim to have better access to information about transaction, we wish to develop a search engine that can calculate the average value of transactions in a given period of time quickly for a given property.
+1.  Review and adjust the schema for the primary use case (displaying listing info to customers), optimizing for performance by potentially separating data (e.g., reviews, transactions) using appropriate patterns (like Subset or linking). Clean data errors.
 
-11)	We wish to have a summary webpage that displays information about our top destinations. This webpage should display for each of the top 10 cities some basic information about our operations in the area (number of properties by type for example, average price by type) but you can choose the metrics. For each of the top 10 cities it should also provide some basic information about the top 3 properties in each city (price, number of review, whatever you think useful) to show an example of the properties available in the area. We would like to keep this webpage up to date as information changes.
+**Standard Difficulty Queries:** [2 points each]
 
-**Database updates:** [2 points per question]
+2.  Find three superhosts (>1 listing) whose properties accommodate >4 people.
+3.  Identify the most common bed type in New York listings featuring waterfront and a dishwasher.
+4.  Find the author of the longest review in New York.
+5.  Calculate the largest and smallest difference between price and security deposit per number of guests accommodated.
+6.  Determine the average stay duration (using `maximum_nights`) per property type per city, identifying cities with highest/lowest averages for each type.
 
-After optimizing the database, show how to complete the following updates. You can create fictional data. Ensure that previous data does not become stale:
+**Advanced Difficulty & Optimization Queries:** [3 points each]
 
-12) Add a new property with a new host in one of the top 10 cities. The host selects the top 10 most common amenities to list.
+7.  Optimize for retrieving a list of all unique amenities for host setup (use case: frequent reads, infrequent updates). Implement and query.
+8.  Optimize for displaying top 20 reviewers by review count and quickly querying review counts per reviewer ID/Name (use case: frequent updates/reads). Implement and query.
+9.  Adapt the schema to easily calculate the average review score across all existing and potentially *new* metrics without query changes (Polymorphic Pattern likely). Implement and query for an example property.
+10. Optimize for quickly calculating the average transaction value within a given time period for a specific property (Bucket Pattern might be useful).
+11. Design and optimize for a summary webpage showing metrics for the top 10 cities (e.g., property counts/types, average prices) and details of the top 3 properties within each (Subset/Computed Pattern).
 
-13) Add a new review from one of our top 20 reviewers for this new property.
+**Database Update Operations:** [2 points each]
 
-14) Add a new review metric called 'x_factor' with a score of 10. Show that the average score across all metrics is correctly calculated for this listing, using the previously developed query.
+12. Add a new property with a new host and common amenities to a top city, ensuring data consistency.
+13. Add a new review from a top reviewer for the new property.
+14. Add a new review metric ('x_factor') and verify the average score calculation query (from Q9) works correctly.
 
-</details>
+*Detailed implementations, transformations, justifications, and query results can be found in the [Homework2_MongoDB](Homework2_MongoDB) directory.*
+
+---
