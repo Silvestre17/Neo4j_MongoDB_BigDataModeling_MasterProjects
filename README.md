@@ -1,29 +1,46 @@
-# **💾 BDMM | Assignments 1 & 2 | 24.25 - [Group 5] 📦**
-
-This repository contains the solutions for **Assignment 1 (Neo4j)** and **Assignment 2 (MongoDB)** for the **Big Data Management and Modelling (BDMM)** course, part of the Master's in Data Science and Advanced Analytics at NOVA IMS.
+# **🗄️ Advanced Database Modeling: Neo4j & MongoDB 🚀**
 
 <p align="center">
-    <a href="https://github.com/Silvestre17/BDMM_Assignment1-2">
+    <a href="https://github.com/Silvestre17/Neo4j_MongoDB_BigDataModeling_MasterProjects">
         <img src="https://img.shields.io/badge/GitHub_Repository-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repo">
-    </a>
-    <a href="https://www.python.org/">
-        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
     </a>
 </p>
 
-## 👥 Group 5 Members
+## 📝 Description
 
-*   Alexandre Gonçalves, 20240738
-*   André Silvestre, 20240502
-*   Filipa Pereira, 20240509
-*   João Henriques, 20240499
-*   Umeima Mahomed, 20240543
+This repository is a portfolio of advanced database modeling projects for the **Big Data Management and Modelling (BDMM)** course. It showcases the practical application of two powerful NoSQL database paradigms: **Graph Databases** using **Neo4j** (Assignment 1) and **Document Databases** with **MongoDB** (Assignment 2). Each assignment tackles a real-world business problem, demonstrating the entire lifecycle from data modeling and schema design to querying, optimization, and analysis.
+
+## ✨ Objective
+
+The core objectives of these projects were to:
+*   Design, implement, and query a graph database to analyze highly connected data.
+*   Apply various data modeling patterns (e.g., Subset, Bucket, Linking) to optimize a document database for specific use cases.
+*   Perform data cleaning, schema refinement, and performance tuning (indexing) in both database systems.
+*   Utilize Python database connectors (`neo4j`, `pymongo`) for programmatic interaction and analysis.
+
+## 🎓 Project Context
+
+This work was completed for the **Big Data Management and Modelling (BDMM)** course in the **[Master's in Data Science and Advanced Analytics](https://www.novaims.unl.pt/en/education/programs/postgraduate-programs-and-master-degree-programs/master-degree-program-in-data-science-and-advanced-analytics-with-a-specialization-in-data-science/)** program at **NOVA IMS**. The assignments were completed during the **2nd Semester, 1st Trimester** of the **2024/2025** academic year.
+
+## 🛠️ Technologies Used
+
+This portfolio demonstrates proficiency with the following database technologies and their Python ecosystems.
+
+<p align="center">
+    <a href="https://neo4j.com/"><img src="https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/></a>
+    <a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/></a>
+    <a href="https://www.python.org/">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+    </a>
+    <a href="https://pypi.org/project/neo4j/"><img src="https://img.shields.io/badge/neo4j_driver-008CC1?style=for-the-badge" alt="Neo4j Python Driver"/></a>
+    <a href="https://pymongo.readthedocs.io/en/stable/"><img src="https://img.shields.io/badge/PyMongo-47A248?style=for-the-badge" alt="PyMongo"/></a>
+</p>
 
 ---
 
-## 1️⃣ Assignment 1: The Beer Project 🍺 (Neo4j)
+## 📚 Project Breakdown
 
-</summary>
+### 1️⃣ [Assignment 1: The Beer Project 🍺 (Neo4j)](./Homework1_Neo4J_TheBeerProject/)
 
 <p align="center">
     <a href="https://neo4j.com/"><img src="https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/></a>
@@ -67,12 +84,12 @@ The following schema represents the structure of the graph database after cleani
     *   c. ~~Community detection based on review smell scores.~~
     *   d. ~~Identify the most influential user based on reviews of distinct beer styles.~~
 
-*Detailed answers and code can be found in the [Homework1_Neo4J_TheBeerProject](.Homework1_Neo4J_TheBeerProject) directory.*
+*Detailed answers and code can be found in the [Homework1_Neo4J_TheBeerProject](./Homework1_Neo4J_TheBeerProject) directory.*
 
 
 ---
 
-## 2️⃣ Assignment 2: AirBNB Data Modelling 🏠 (MongoDB)
+### 2️⃣ [Assignment 2: Airbnb Data Modeling 🏠 (MongoDB)](./Homework2_MongoDB/)
 
 
 <p align="center">
@@ -80,7 +97,7 @@ The following schema represents the structure of the graph database after cleani
     <a href="https://pymongo.readthedocs.io/en/stable/"><img src="https://img.shields.io/badge/PyMongo-47A248?style=for-the-badge&logo=python&logoColor=white" alt="PyMongo"/></a>
 </p>
 
-This assignment focuses on **MongoDB**, a NoSQL document database, and addresses data modeling challenges within the context of AirBNB listings data. The goal is to optimize the database schema for various business use cases, improve query performance, and handle data quality issues using appropriate MongoDB patterns and features.
+This assignment focuses on **MongoDB**, a NoSQL document database, and addresses data modeling challenges within the context of **[AirBNB](https://www.airbnb.com/)** listings data. The goal is to optimize the database schema for various business use cases, improve query performance, and handle data quality issues using appropriate MongoDB patterns and features.
 
 ### 📰 Problem Scenario & Challenges
 
@@ -142,6 +159,14 @@ The following diagram illustrates the optimized MongoDB schema designed during t
 13. Add a new review from a top reviewer for the new property.
 14. Add a new review metric ('x_factor') and verify the average score calculation query (from Q9) works correctly.
 
-*Detailed implementations, transformations, justifications, and query results can be found in the [Homework2_MongoDB](Homework2_MongoDB) directory.*
+*Detailed implementations, transformations, justifications, and query results can be found in the [Homework2_MongoDB](./Homework2_MongoDB) directory.*
 
 ---
+
+## 👥 Group 5 Members
+
+*   Alexandre Gonçalves, 20240738
+*   André Silvestre, 20240502
+*   Filipa Pereira, 20240509
+*   João Henriques, 20240499
+*   Umeima Mahomed, 20240543
